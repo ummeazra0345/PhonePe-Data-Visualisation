@@ -1,77 +1,67 @@
-[Introduction](#Introduction)
+# PhonePe Pulse Data Visualization & Analytics
 
-[Technologies Used](#Technologies-Used)
+## Table of Contents
+* [Introduction](#introduction)
+* [Technologies Used](#technologies-used)
+* [Process Flow](#process-flow)
+* [Application Flow](#application-flow)
+* [Setup & Installation](#setup--installation)
+* [License](#license)
+* [Conclusion](#conclusion)
 
-[Process Flow](#Process-Flow)
-
-[Application Flow](#Application-Flow)
-
-[License](#License)
-
-[Conclusion](#Conclusion)
+---
 
 ## Introduction
-* PhonePe Pulse is a fascinating gateway into the world of digital payments in India! With over 30 crore registered users and a staggering 2000 crore transactions, PhonePe is not just a digital payments platform, but a true beholder of the Indian digital payments revolution.With a remarkable 46% UPI market share, PhonePe stands tall as India's largest digital payments platform.
-* unlock the power of PhonePe Pulse with the help of this application, an extraordinary data analytics platform that offers you a front-row seat to witness the dynamic landscape of digital transactions in India. Dive deep into the depths of data and explore the intriguing insights and captivating trends in different visualization formats. Now, you have the incredible opportunity to tap into the wealth of information with the help of PhonePe Pulse and bring it to life through stunning visualizations!!
+* **PhonePe Pulse** provides deep visibility into India's digital payments ecosystem. With over 30 crore registered users, 2,000+ crore transactions, and a ~46% UPI market share, PhonePe represents the largest digital payments network in India.
+* This interactive analytics dashboard transforms raw PhonePe Pulse transaction and user metrics into visual insights—allowing users to slice payment trends across states, quarters, and transaction categories.
 
-    ![analysis.png](https://github.com/Jeel-Kenia/PhonePe-Data_Visualisation/blob/main/images/Homepage.png)
-###### " Disclaimer:-Data for year 2018 to 2022 only "
+![Application Homepage](images/Homepage.png)
+
+> **Disclaimer:** Dataset covers transaction and user records from **2018 to 2022**.
+
+---
 
 ## Technologies Used
-**`Python:`** The project is implemented using the Python programming language.
+* **Python:** Core programming language used for data extraction, transformation, and backend logic.
+* **MySQL:** Relational database used to store structured transaction and user tables for fast querying.
+* **Streamlit:** Interactive web framework powering the dashboard UI and dynamic filter controls.
+* **Pandas:** Data manipulation library used to clean, aggregate, and structure raw JSON records into tabular DataFrames.
+* **Plotly:** Visualization library used to build interactive geographical maps, bar charts, and trend plots.
 
-**`MySQL`** MySQL has been used to structure and query data for analysis.
-
-**`Streamlit:`** The user interface and visualization are created using the Streamlit framework, providing a seamless and interactive experience.
-
-**`Pandas:`** A powerful data manipulation and analysis library in Python. Pandas is used in the YouTube Data Scraper to handle and process data obtained from YouTube, providing functionalities such as data filtering, transformation, and aggregation.
-
-**`Plotly`** Plotly is a powerful and versatile data visualisation library that allows you to create interactive and visually appealing plots and charts. 
-
-**`pip install -r requirements.txt:`** To install the rquired dependencies.
+---
 
 ## Process Flow
-### ETL Process
-> `Extracting` Data from by cloning the rich repository of PhonePe data from [GitHub](https://github.com/PhonePe/).
 
-> `Transforming` data with the help of Python Algorithms to mold and shape the cloned data into a captivating DataFrame format.
+### 1. ETL Pipeline
+* **Extract:** Cloned the open-source [PhonePe Pulse GitHub repository](https://github.com/PhonePe/pulse) containing aggregated JSON datasets.
+* **Transform:** Parsed nested directory structures and JSON payloads using Python and Pandas to normalize transaction counts, amounts, and user registration metrics into clean DataFrames.
+* **Load:** Designed a normalized MySQL database schema and bulk-inserted the transformed records for structured querying.
 
-> `Loading` Data into SQL by creating a database and tables so that all the data finds its frightful place.
+### 2. Data Analysis & Visualization
+* **Querying:** Executed parameterized SQL queries from the application layer based on user-selected filters.
+* **Visualization:** Rendered interactive geospatial maps, state-wise rankings, and category breakdowns in Streamlit using Plotly.
 
- ### Data Analysis and Visualisation
-> Once data is loaded into MySQL, we extract the required data in the form of `queries`.
-
-> Create a `dashboard` using `Streamlit` to display the data according to our requirements and analysis to gain meaningful insights.
+---
 
 ## Application Flow
-* Once you load the application, you are directed towards the `Home` page which gives a basic overview of the application.
+1. **Home Page:** Displays an overview of the PhonePe Pulse ecosystem and provides navigation to the analytics modules.
 
-* You have two options to select from as shown below:
+   ![Navigation Pages](images/pages%20ss.png)
 
-     ![image](https://github.com/Jeel-Kenia/PhonePe-Data_Visualisation/blob/main/images/pages%20ss.png)
+2. **Module Selection:** Choose between **Transaction Analysis** and **User Analysis** depending on the metrics you want to explore.
+3. **Interactive Filtering:** Filter insights dynamically by **Type**, **Year**, **Quarter**, and **State** to inspect granular charts and summary tables.
 
-* Depending upon the type of analysis, select one of the two and move on to the respective page.
+   ![Dashboard View 1](images/image1.png)
+   ![Dashboard View 2](images/image3.png)
+   ![Dashboard View 3](images/image4.png)
+   ![Dashboard View 4](images/image5.png)
+   ![Dashboard View 5](images/image6.png)
+   ![Dashboard View 6](images/image7.png)
 
-* Select the **Type** , **Year** , **Quarter** and **State** depending upon the requirement to view charts and tables for the particular period.
+---
 
-     ![image1](https://github.com/Jeel-Kenia/PhonePe-Data_Visualisation/blob/main/images/image1.png)
-
-     ![image3](https://github.com/Jeel-Kenia/PhonePe-Data_Visualisation/blob/main/images/image3.png)
-
-     ![image4](https://github.com/Jeel-Kenia/PhonePe-Data_Visualisation/blob/main/images/image4.png)
-
-     ![image5](https://github.com/Jeel-Kenia/PhonePe-Data_Visualisation/blob/main/images/image5.png)
-
-     ![image6](https://github.com/Jeel-Kenia/PhonePe-Data_Visualisation/blob/main/images/image6.png)
-
-     ![image7](https://github.com/Jeel-Kenia/PhonePe-Data_Visualisation/blob/main/images/image7.png)
-
-## License
-> Community Data License Agreement – Permissive – Version 2.0
-
-> Apache License 2.0. 
-
-## Conclusion
-By leveraging the power of PhonePe Pulse, you can tap into a wealth of information and transform it into stunning visualizations. The application utilizes cutting-edge technologies such as Python, MySQL, Streamlit, Pandas, and Plotly to provide a seamless and interactive experience. With a structured ETL process and robust data analysis capabilities, you can extract, transform, and load data efficiently, paving the way for meaningful analysis.
-
-The application's flow guides you through a user-friendly interface, allowing you to explore different types, years, quarters, and states to visualize data in charts and tables. Whether you're an analyst, researcher, or enthusiast, PhonePe Pulse equips you with the tools to uncover valuable insights and make data-driven decisions.
+## Setup & Installation
+1. Clone the repository and navigate to the project directory:
+   ```bash
+   git clone <your-repo-url>
+   cd PhonePe-Data-Visualisation
